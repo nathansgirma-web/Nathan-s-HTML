@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+function even(numbers) {
+
+  return numbers.filter(num => num % 2 === 0);
+}
+
+const originalArray = [2, 7, 4];
+
+
+const evenArray = even(originalArray);
+
+
+console.log("Original array:", originalArray);
+console.log("Even numbers array:", evenArray);
+</script>
+
+</body>
+</html>

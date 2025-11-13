@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting Program</title>
+</head>
+<body>
+<script>
+    'use strict';
+    function votingProgram() {
+  let candidateCount = 3;
+    let candidateNames = ["ellie", "frank", "pamela"];
+
+
+  let candidates = [];
+  for (let i = 0; i < candidateCount; i++) {
+    candidates.push({ name: candidateNames[i], votes: 0 });
+  }
+
+
+  let voterCount = 5;
+    let votes = ["pamela", "frank", "pamela", "ellie", "pamela"];
+
+
+  for (let i = 0; i < voterCount; i++) {
+    let vote = votes[i];
+
+
+    for (let j = 0; j < candidates.length; j++) {
+      if (vote === candidates[j].name) {
+        candidates[j].votes++;
+      }
+    }
+  }
+
+
+  candidates.sort(function (a, b) {
+    return b.votes - a.votes;
+  });
+
+
+  let winner = candidates[0];
+  console.log("\nThe winner is " + winner.name + " with " + winner.votes + " votes.");
+
+
+  console.log("Results:");
+  for (let i = 0; i < candidates.length; i++) {
+    console.log(candidates[i].name + ": " + candidates[i].votes + " votes");
+  }
+}
+votingProgram();
+</script>
+</body>
+</html>
